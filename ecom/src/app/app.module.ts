@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CategoryComponent } from './category/category.component';
 import { SubcategoryComponent } from './subcategory/subcategory.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ApproveVendorComponent } from './approve-vendor/approve-vendor.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     CategoryComponent,
-    SubcategoryComponent
+    SubcategoryComponent,
+    ApproveVendorComponent
   ],
   imports: [
     BrowserModule,

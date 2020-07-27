@@ -68,13 +68,67 @@
                                     <td>{{cat.CategoryID}}</td>
                                     <td>{{cat.CategoryNames}}</td>
                                     <td>{{cat.Active}}</td>
-                                    <td>Edit</td>
+                                    <!-- <td><button id="displayNotif" class="btn btn-success" data-toggle="modal" data-target="#modalUpdate">EDIT</button></td> -->
+                                    <td><div class="demo-icon"> <div class="icon-preview"><i class="la la-edit" data-toggle="modal" data-target="#modalUpdate"></i></div> <div class="icon-class"></div> </div></td>
                                 </tr>
                                 
                             </tbody>
                         </table>
                     </div>	
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <h6 class="modal-title"><i class="la la-frown-o"></i> Under Development</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">									
+                <!-- <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                    <label>Add Category :</label>
+                    </div>
+                    <div class="col-lg-4 col-md-9 col-sm-12">
+                    <input type="text" class="form-control input-square" name="catName" ngModel #uname id="squareInput" placeholder="">
+                    
+                     </div>
+                </div> -->
+                <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Recipient:</label>
+                      <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">Message:</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Recipient:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                      <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Recipient:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                      <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                      </div>
+                  </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
