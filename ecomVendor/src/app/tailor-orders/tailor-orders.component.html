@@ -1,0 +1,104 @@
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Order Management </h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <label class="form-radio-label">
+                                <input class="form-radio-input" type="radio" name="optionsRadios" value="">
+                                <span class="form-radio-sign">New Orders</span>
+                            </label>
+                            <label class="form-radio-label">
+                                <input class="form-radio-input" type="radio" name="optionsRadios" value="" checked>
+                                <span class="form-radio-sign">Accepted Orders</span>
+                            </label>
+                    </div>
+                    
+                    <div class="card-body">
+                    <table class="table table-head-bg-success">
+                            <thead>
+                                <tr>
+                                    <th scope="col">S.No</th>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Customer details</th>
+                                    <th scope="col">Ordered on</th>
+                                    <th scope="col">View Details</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            
+
+
+                                <tr>
+                                    <td>4</td>
+                                    <td><img src="assets/img/Product.jpg" style="width:80px;height:100px;"></td>
+                                    <td>
+                                        Name: Samantha<br>Product: Kurti<br>location: chennai<br>delivery date: 7-10days
+                                    </td>
+                                    <td>8/07/2020</td>
+                                    <td>
+                                        <div data-toggle="modal" data-target="#modalUpdate">
+                                            <a routerLink="/orderDetails"><button class="btn btn-primary"> Order details</button></a>
+                                           </div>
+                                    </td>
+                                    <td>														
+                                        <button class="btn btn-success"> Accept </button>&nbsp;&nbsp;
+                                        <button class="btn btn-danger"> Reject </button>						
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="card-body">
+                    <table class="table table-head-bg-success">
+                            <thead>
+                                <tr>
+                                    <th scope="col">S.No</th>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Customer details</th>
+                                    <th scope="col">Accepted on</th>
+                                    <th scope="col">View details</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                         
+                           
+
+                        
+                                <tr>
+                                    <td>4</td>
+                                    <td><img src="assets/img/Product.jpg" style="width:80px;height:100px;"></td>
+                                    <td>
+                                        Name: Samantha<br>Product: Kurti<br>location: chennai<br>delivery date: 7-10days
+                                    </td>
+                                    <td>8/07/2020</td>
+                                    <td>
+                                        <div data-toggle="modal" data-target="#modalUpdate">
+                                                <a href="accepted_order.html"><button class="btn btn-primary"> Order details</button></a>
+                                           </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-lg-4 col-md-9 col-sm-12">
+                                            <select class="form-control input-fixed" id="notify_placement_from">
+                                                <option>Progress</option>
+                                                <option>Completed</option>
+                                                <option>Delivered</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
