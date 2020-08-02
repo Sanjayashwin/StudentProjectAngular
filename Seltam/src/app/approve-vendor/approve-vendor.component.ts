@@ -3,7 +3,7 @@ import { VendorServiceService } from '../vendor-service.service';
 import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-declare var $ : any;
+declare var $: any;
 @Component({
   selector: 'app-approve-vendor',
   templateUrl: './approve-vendor.component.html',
@@ -11,17 +11,18 @@ declare var $ : any;
 })
 export class ApproveVendorComponent implements OnInit {
   optionsRadios = "";
-  constructor(public venService: VendorServiceService, public loginService: LoginService,public router: Router) { }
+  constructor(public venService: VendorServiceService, public loginService: LoginService, public router: Router) { }
   VendorPendingLIst = [];
-  VendorApprovedLIst=[]
+  VendorApprovedLIst = []
   vname = ""
   vplace = ""
   vpin = ""
-  Approvevid=""
-Rejectid=""
+  Approvevid = ""
+  Rejectid = ""
   ngOnInit(): void {
     this.getPendingVendorList();
     this.geApprovedVendorList()
+    this.loginService.updateCart.emit();
   }
 
   onItemChange(value) {
@@ -50,27 +51,25 @@ Rejectid=""
   }
 
 
-  
 
-  setvendorID(value)
 
-  {
+  setvendorID(value) {
     this.Approvevid = value;
     this.Rejectid = value;
-    console.log( this.Approvevid)
+    console.log(this.Approvevid)
   }
 
   ApproveVendor(ngform: NgForm) {
 
-    ngform.value.Approvevid=this.Approvevid;
-    ngform.value.status="Approved"
+    ngform.value.Approvevid = this.Approvevid;
+    ngform.value.status = "Approved"
 
 
     this.venService.ApproveVendorById(ngform.value).subscribe((data: any[]) => {
 
       console.log("my data", data);
       $("#modalUpdateApprove").modal("hide");
-      // this.router.navigate(['/vendoreAppprove']);
+
       this.getPendingVendorList();
       this.geApprovedVendorList();
 
@@ -80,8 +79,8 @@ Rejectid=""
 
     }, () => {
 
-     // console.log("completed");
-     
+      // console.log("completed");
+
 
     });
     //console.log(ngform.value)
@@ -89,20 +88,19 @@ Rejectid=""
     this.geApprovedVendorList();
   }
 
-  RejectVendor(ngformR: NgForm)
-  {
-    ngformR.value.Rejectid=this.Rejectid;
-    ngformR.value.status="Rejected"
+  RejectVendor(ngformR: NgForm) {
+    ngformR.value.Rejectid = this.Rejectid;
+    ngformR.value.status = "Rejected"
 
-    console.log("my data",ngformR.value );
+    console.log("my data", ngformR.value);
     this.venService.RejectVendorById(ngformR.value).subscribe((data: any[]) => {
 
-     // console.log("my data", data);
+      // console.log("my data", data);
       $("#modalUpdateReject").modal("hide");
       // this.router.navigate(['/vendoreAppprove']);
       this.getPendingVendorList();
       this.geApprovedVendorList();
-      
+
 
     }, (error) => {
 
@@ -111,13 +109,13 @@ Rejectid=""
     }, () => {
 
       console.log("completed");
-     
+
 
     });
-   // console.log(ngformR.value)
+    // console.log(ngformR.value)
     this.getPendingVendorList();
     this.geApprovedVendorList();
-    
+
   }
 
 
@@ -142,7 +140,7 @@ Rejectid=""
 
 
 
-  
+
   geApprovedVendorList() {
     this.venService.getApprovedVendorList().subscribe((data: any[]) => {
 
@@ -162,6 +160,6 @@ Rejectid=""
   }
 
 
- 
+
 
 }

@@ -23,6 +23,6 @@ export class LoginService {
   getService()
   {
 
-    return this.role;
+    return localStorage.getItem("token");;
   }
 }

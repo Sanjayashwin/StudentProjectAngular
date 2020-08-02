@@ -73,8 +73,7 @@
                                     <th scope="col">Id</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">ViewDetails</th>
-                                    <th scope="col">Approve</th>
-                                    <th scope="col">Reject</th>
+                                    <th scope="col">View Tempalate Design</th>
                                     <th scope="col">Photo</th>
                                 </tr>
                             </thead>
@@ -82,9 +81,8 @@
                                 <tr  *ngFor="let list of VendorApprovedLIst"> 
                                     <td>{{list.VendorID}}</td> 
                                     <td>{{list.FirstName}}</td>
-                                    <td data-toggle="modal" data-target="#modalUpdateView" value="1" (click)="PendingListByID(list.VendorID)">ViewDetails</td>
-                                    <td><button id="displayNotif" class="btn btn-success" data-toggle="modal" data-target="#modalUpdateApprove" (click)=setvendorID(list.VendorID)>Approve</button></td>
-                                    <td><button id="displayNotif" class="btn btn-success" data-toggle="modal" data-target="#modalUpdateReject">Reject</button></td>
+                                    <td data-toggle="modal"  value="1" (click)="PendingListByID(list.VendorID)">ViewDetails</td>
+                                    <td data-toggle="modal"  value="1" (click)="PendingListByID(list.VendorID)">View Tempalate Design</td>
                                     <td><img src="{{list.VendorPhoto}}" alt="" border=3 height=75 width=75 style="border-radius: 50%;"></td>
                                 </tr>
                                 

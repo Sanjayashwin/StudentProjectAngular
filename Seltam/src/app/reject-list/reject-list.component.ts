@@ -15,6 +15,7 @@ export class RejectListComponent implements OnInit {
   ngOnInit(): void {
 
     this.getRejectedVendorList();
+    this.loginService.updateCart.emit();
   }
 
 
@@ -43,7 +44,7 @@ export class RejectListComponent implements OnInit {
   getRejectedVendorList() {
     this.venService.getRejectedVendorList().subscribe((data: any[]) => {
 
-      //console.log("my data", data);
+      console.log("my data", data);
 
       this.VendorRejectedLIst = data;
 

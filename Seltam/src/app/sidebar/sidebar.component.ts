@@ -9,15 +9,24 @@ import { LoginService } from '../login.service';
 export class SidebarComponent implements OnInit {
 
   constructor(public loginService: LoginService) { }
-  role:String;
+  role: String;
 
 
   ngOnInit(): void {
+    this.loginService.updateCart.subscribe((data: any) => {
+
+      console.log("subscribed");
 
 
 
-    
+      // this.myCartItems++;
 
+    });
   }
 
+
+
+
 }
+
+

@@ -9,7 +9,7 @@
 
                     </div>
 
-                    <div class="card-body" id="pending">
+                    <div class="card-body">
                         <div class="card-title">Rejected-List</div>
                         <table class="table table-head-bg-success">
                             <thead>
@@ -17,6 +17,7 @@
                                     <th scope="col">Id</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">ViewDetails</th>
+                                    <th scope="col">Comments</th>
                                     <th scope="col">Photo</th>
                                 </tr>
                             </thead>
@@ -26,6 +27,7 @@
                                     <td>{{list.FirstName}}</td>
                                     <td data-toggle="modal" data-target="#modalUpdateView" value="1"
                                         (click)="RejectetdListByID(list.VendorID)">ViewDetails</td>
+                                    <td>{{list.RejectComments}}</td>   
                                     <td><img src="{{list.VendorPhoto}}" alt="" border=3 height=75 width=75
                                             style="border-radius: 50%;"></td>
                                 </tr>
