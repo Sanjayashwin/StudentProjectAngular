@@ -10,6 +10,9 @@ import { CategoryComponent } from './category/category.component';
 import { SubcategoryComponent } from './subcategory/subcategory.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApproveVendorComponent } from './approve-vendor/approve-vendor.component';
+import { AdminComponent } from './admin/admin.component';
+import { TestComponent } from './test/test.component';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { ApproveVendorComponent } from './approve-vendor/approve-vendor.componen
     FooterComponent,
     CategoryComponent,
     SubcategoryComponent,
-    ApproveVendorComponent
+    ApproveVendorComponent,
+    AdminComponent,
+    TestComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +34,6 @@ import { ApproveVendorComponent } from './approve-vendor/approve-vendor.componen
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [IndexComponent]
 })
 export class AppModule { }

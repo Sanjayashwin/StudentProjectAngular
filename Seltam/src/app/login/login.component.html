@@ -1,0 +1,73 @@
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Add/Edit Category</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Category</div>
+                        
+                    </div>
+                    <div class="card-body">
+                        <div class="form">
+                                  
+                         <form (ngSubmit)="login(f)" #f="ngForm">
+                            <div class="form-group from-show-notify row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                                   
+                                </div>
+                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                    <label>{{msg}}</label>
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group from-show-notify row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                                    <label>UserName:</label>
+                                </div>
+                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                    <input type="text" class="form-control input-square" name="Username" ngModel #uname id="squareInput" placeholder="">
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group from-show-notify row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                                    <label>Password</label>
+                                </div>
+                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                    <input type="text" class="form-control input-square" name="password" ngModel #uname id="squareInput" placeholder="">
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="form-group from-show-notify row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                                    <label>Status :</label>
+                                </div>
+                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                    <select class="form-control input-fixed" name="role"  ngModel  #Sname id="notify_state">
+                                        <option value="Admin">Admin</option>
+                                        <option value="Venor">Vendor</option>
+                                    </select>
+                                </div> 
+                            </div>
+                            <div class="form-group from-show-notify row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                                    <a routerLink="vendorRegister">  <button id="displayNotif" class="btn btn-success">vendor Registration</button></a>
+                                </div>
+                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                      <button id="displayNotif" class="btn btn-success">Submit</button>
+                                </div>
+                            </div>
+                           </form> 
+                        </div>
+
+                    </div>
+                
+                  	
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="wrapper" *ngIf="rolename==2">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="main-panel">
+        <!-- <app-category></app-category>  -->
+        <!-- <app-subcategory></app-subcategory> -->
+        <!-- <app-footer></app-footer> -->
+        <router-outlet></router-outlet>
+        <!-- <app-approve-vendor></app-approve-vendor> -->
+    </div>
+</div>
+
+
+<div class="wrapper" *ngIf="rolename==1">
+    rest
+</div>
+

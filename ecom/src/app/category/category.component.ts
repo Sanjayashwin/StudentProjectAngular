@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CategoryService } from '../category.service';
 import { Router } from '@angular/router';
-
+declare var $ : any;
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
@@ -21,6 +21,10 @@ export class CategoryComponent implements OnInit {
   ngOnInit(): void {
 
     this.showCatagoryLIst();
+    $(document).ready( function () {
+      $('#tab').DataTable();
+    } );
+    
 
   }
 

@@ -1,0 +1,329 @@
+<div class="sidebar" *ngIf="loginService.getService()=='Admin'">
+    <div class="scrollbar-inner sidebar-wrapper">
+        <!-- <div class="user">
+            <div class="photo">
+                <img src="assets/img/profile.jpg">
+            </div>
+            <div class="info">
+                <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                    <span>
+                        spershan
+                        <span class="user-level">Administrator</span>
+                        <span class="caret"></span>
+                    </span>
+                </a>
+                <div class="clearfix"></div>
+
+                <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+                    <ul class="nav">
+                        <li>
+                            <a href="#profile">
+                                <span class="link-collapse">My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#edit">
+                                <span class="link-collapse">Edit Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#settings">
+                                <span class="link-collapse">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+        <ul class="nav">
+            <li class="nav-item active">
+                <a href="/">
+                    <i class="la la-dashboard"></i>
+                    <p>Dashboard</p>
+                    
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/Category">
+                    <i class="la la-table"></i>
+                    <p>Category</p>
+                    
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/SubCategory">
+                    <i class="la la-keyboard-o"></i>
+                    <p>Sub-category</p>    
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/vendoreAppprove">
+                    <i class="la la-th"></i>
+                    <p>approve vendor</p>
+                    
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/SubCategory">
+                    <i class="la la-bell"></i>
+                    <p>approve design pattern</p>
+                    
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/SubCategory">
+                    <i class="la la-font"></i>
+                    <p>Customer Post order Details</p>
+                    <!-- <span class="badge badge-danger"></span> -->
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/RejectedVendor">
+                    <i class="la la-th"></i>
+                    <p>Rejected Venodr List</p>
+                    
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+<!-- vendor -->
+
+
+<div class="sidebar" *ngIf="loginService.getService()=='Venor'">
+    <div class="scrollbar-inner sidebar-wrapper">
+        <div class="user">
+            <div class="photo">
+                <img src="assets/img/profile.jpg">
+            </div>
+            <div class="info">
+                <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                    <span>
+                       
+                        <span class="user-level">VENDOR</span>
+                        <span class="caret"></span>
+                    </span>
+                </a>
+                <div class="clearfix"></div>
+
+                <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+                    <ul class="nav">
+                        <li>
+                            <a href="#profile">
+                                <span class="link-collapse">My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#edit">
+                                <span class="link-collapse">Edit Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#settings">
+                                <span class="link-collapse">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="nav">
+            <li class="nav-item active">
+                <a routerLink="/">
+                    <i class="la la-dashboard"></i>
+                    <p>Dashboard</p>
+                    
+                </a>
+            </li>
+                                        
+            <li class="nav-item">
+                    <a class="" data-toggle="collapse" href="#collapseExampl" aria-expanded="true">
+                    <i class="la la-table"></i>
+                    <p>Design Pattern</p>
+                    <span class="caret"></span>
+                </a>
+                <div class="clearfix"></div>
+                <div class="collapse in" id="collapseExampl" aria-expanded="true" style="">
+                    <ul class="nav">
+                        <li>
+                            <a routerLink="/viewdesignPattern">
+                                <span class="link-collapse">ventor Design Pattern </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="/addDesignPattern">
+                                <span class="link-collapse">Add design pattern </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="/addMeasurement">
+                                <span class="link-collapse">Add Measurement</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </li>
+
+            <li class="nav-item">
+                <a routerLink="/Catalogmanage">
+                    <i class="la la-keyboard-o"></i>
+                    <p>Catalog manage</p>
+                    
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/discountManage">
+                    <i class="la la-th"></i>
+                    <p>Discount manage</p>
+                    
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/tailororder">
+                    <i class="la la-bell"></i>
+                    <p>Tailoring orders</p>
+                    
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/customerpostOrder">
+                    <i class="la la-font"></i>
+                    <p>Customer posted order</p>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sidebar" *ngIf="loginService.getService()=='to'">
+    <div class="scrollbar-inner sidebar-wrapper">
+        <div class="user">
+            <div class="photo">
+                <img src="assets/img/profile.jpg">
+            </div>
+            <div class="info">
+                <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                    <span>
+                       
+                        <span class="user-level">VENDOR</span>
+                        <span class="caret"></span>
+                    </span>
+                </a>
+                <div class="clearfix"></div>
+
+                <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+                    <ul class="nav">
+                        <li>
+                            <a href="#profile">
+                                <span class="link-collapse">My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#edit">
+                                <span class="link-collapse">Edit Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#settings">
+                                <span class="link-collapse">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="nav">
+            <li class="nav-item active">
+                <a routerLink="/">
+                    <i class="la la-dashboard"></i>
+                    <p>Dashboard</p>
+                    
+                </a>
+            </li>
+                                        
+            <li class="nav-item">
+                    <a class="" data-toggle="collapse" href="#collapseExampl" aria-expanded="true">
+                    <i class="la la-table"></i>
+                    <p>Design Pattern</p>
+                    <span class="caret"></span>
+                </a>
+                <div class="clearfix"></div>
+                <div class="collapse in" id="collapseExampl" aria-expanded="true" style="">
+                    <ul class="nav">
+                        <li>
+                            <a routerLink="/viewdesignPattern">
+                                <span class="link-collapse"> </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="/addDesignPattern">
+                                <span class="link-collapse"> </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="/addMeasurement">
+                                <span class="link-collapse"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </li>
+
+            <li class="nav-item">
+                <a routerLink="/Catalogmanage">
+                    <i class="la la-keyboard-o"></i>
+                    <p></p>
+                    
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/discountManage">
+                    <i class="la la-th"></i>
+                    <p></p>
+                    
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/tailororder">
+                    <i class="la la-bell"></i>
+                    <p></p>
+                    
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/customerpostOrder">
+                    <i class="la la-font"></i>
+                    <p></p>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,227 @@
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Approve Vendor</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Sub-Category</div>
+
+                    </div>
+                    <div class="card-body">
+                        <!-- <p class="demo"> -->
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <form>
+                                    <label class="form-radio-label">
+                                        <input class="form-radio-input" type="radio" name="optionsRadios" ngModel #unam
+                                            value="pending" (change)="onItemChange($event.target.value)">
+                                        <span class="form-radio-sign">Pending List</span>
+                                    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <label class="form-radio-label">
+                                        <input class="form-radio-input" type="radio" name="optionsRadios" ngModel #unam
+                                            value="approved" (change)="onItemChange($event.target.value)" checked>
+                                        <span class="form-radio-sign">Approved List</span>
+                                    </label>
+                                </form>
+                            </div>
+
+
+                        </div>
+                        <!-- </p> -->
+                    </div>
+
+
+                    <div class="card-body" id="pending" *ngIf="optionsRadios=='pending'">
+                        <div class="card-title">Pending-List</div>
+                        <table class="table table-head-bg-success">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">ViewDetails</th>
+                                    <th scope="col">Approve</th>
+                                    <th scope="col">Reject</th>
+                                    <th scope="col">Photo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr  *ngFor="let list of VendorPendingLIst"> 
+                                    <td>{{list.VendorID}}</td> 
+                                    <td>{{list.FirstName}}</td>
+                                    <td data-toggle="modal" data-target="#modalUpdateView" value="1" (click)="PendingListByID(list.VendorID)">ViewDetails</td>
+                                    <td><button id="displayNotif" class="btn btn-success" data-toggle="modal" data-target="#modalUpdateApprove" (click)=setvendorID(list.VendorID)>Approve</button></td>
+                                    <td><button id="displayNotif" class="btn btn-success" data-toggle="modal" data-target="#modalUpdateReject" (click)=setvendorID(list.VendorID)>Reject</button></td>
+                                    <td><img src="{{list.VendorPhoto}}" alt="" border=3 height=75 width=75 style="border-radius: 50%;"></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>   
+                    </div>
+
+                    <div class="card-body" id="Approved" *ngIf="optionsRadios=='approved'">
+                        <div class="card-title">Approved List</div>
+                        <table class="table table-head-bg-success">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">ViewDetails</th>
+                                    <th scope="col">Approve</th>
+                                    <th scope="col">Reject</th>
+                                    <th scope="col">Photo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr  *ngFor="let list of VendorApprovedLIst"> 
+                                    <td>{{list.VendorID}}</td> 
+                                    <td>{{list.FirstName}}</td>
+                                    <td data-toggle="modal" data-target="#modalUpdateView" value="1" (click)="PendingListByID(list.VendorID)">ViewDetails</td>
+                                    <td><button id="displayNotif" class="btn btn-success" data-toggle="modal" data-target="#modalUpdateApprove" (click)=setvendorID(list.VendorID)>Approve</button></td>
+                                    <td><button id="displayNotif" class="btn btn-success" data-toggle="modal" data-target="#modalUpdateReject">Reject</button></td>
+                                    <td><img src="{{list.VendorPhoto}}" alt="" border=3 height=75 width=75 style="border-radius: 50%;"></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- //model -->
+<div class="modal fade" id="modalUpdateView" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <h6 class="modal-title"><i class="la la-frown-o"></i> Under Development</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">									
+                <!-- <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                    <label>Add Category :</label>
+                    </div>
+                    <div class="col-lg-4 col-md-9 col-sm-12">
+                    <input type="text" class="form-control input-square" name="catName" ngModel #uname id="squareInput" placeholder="">
+                    
+                     </div>
+                </div> -->
+                <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Name:</label>
+                      <input type="text" class="form-control" id="recipient-name" name="vname" value={{vname}}  ngModel>
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">place</label>
+                      <textarea class="form-control" id="message-text"  name="Vpalce"  value={{vplace}} ngModel></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">pin:</label>
+                        <input type="text" class="form-control" id="recipient-name"  value={{vpin}} name="Vpalce"  ngModel>
+                      </div>
+                  </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- approve -->
+
+<div class="modal fade" id="modalUpdateApprove" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <h6 class="modal-title"><i class="la la-frown-o"></i> Under Development</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">									
+                <!-- <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                    <label>Add Category :</label>
+                    </div>
+                    <div class="col-lg-4 col-md-9 col-sm-12">
+                    <input type="text" class="form-control input-square" name="catName" ngModel #uname id="squareInput" placeholder="">
+                    
+                     </div>
+                </div> -->
+                <form (ngSubmit)="ApproveVendor(f)" #f="ngForm">
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" id="recipient-name" value={{Approvevid}} name ="Approvevid" ngModel>
+                      </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Comments:</label>
+                      <input type="text" class="form-control" id="recipient-name" name ="comments" ngModel>
+                    </div>
+                 
+                  <div class="modal-footer">
+                    <button type="Submit" class="btn btn-secondary">Approve</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                 </form>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Reject -->
+
+<div class="modal fade" id="modalUpdateReject" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <h6 class="modal-title"><i class="la la-frown-o"></i> Under Development</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">									
+                <!-- <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                    <label>Add Category :</label>
+                    </div>
+                    <div class="col-lg-4 col-md-9 col-sm-12">
+                    <input type="text" class="form-control input-square" name="catName" ngModel #uname id="squareInput" placeholder="">
+                    
+                     </div>
+                </div> -->
+                <form (ngSubmit)="RejectVendor(R)" #R="ngForm">
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" id="recipient-name" value={{Rejectid}} name ="Rejectid" ngModel>
+                      </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Comments:</label>
+                      <input type="text" class="form-control" id="recipient-name" name ="regcomments" ngModel>
+                    </div>
+                 
+                  <div class="modal-footer">
+                    <button type="Submit" class="btn btn-secondary">Reject</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                 </form>
+            </div>
+           
+        </div>
+    </div>
+</div>

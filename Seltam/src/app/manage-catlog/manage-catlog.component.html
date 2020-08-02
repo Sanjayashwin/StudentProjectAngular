@@ -1,0 +1,172 @@
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Manage Catalog</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">catalog</div>
+                        <div class="card-category">Add/Edit catalog</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form">
+                            <div class="form-group from-show-notify row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 text-left">
+                                    <label>Choose Category :</label>
+                                </div>
+                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                    <select class="form-control input-fixed" id="notify_placement_from">
+                                        <option>Men</option>
+                                        <option>Women</option>
+                                        <option>Kids</option>
+                                        <option>Babies</option>
+                                        <option>Uniform</option>
+                                    </select>
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group from-show-notify row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 text-left">
+                                    <label>Choose sub-category :</label>
+                                </div>
+                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                    <select class="form-control input-fixed" id="notify_state">
+                                        <option>Shirt</option>
+                                        <option>Pant</option>
+                                        <option>Blazer</option>
+                                        <option>T-shirt</option>
+                                        <option>Tracks</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group from-show-notify row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 text-left">
+                                    <label>Catalog Product Name :</label>
+                                </div>
+                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="form-group from-show-notify row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 text-left">
+                                    <label>Upload catalog images :</label>
+                                </div>
+                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                    <input type="file" class="form-control-file" id="imageupload">
+                                </div>
+                            </div>
+                            <div class="form-group from-show-notify row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 text-left">
+                                    <label>Status :</label>
+                                </div>
+                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                    <select class="form-control input-fixed" id="notify_placement_from">
+                                        <option value="top">Active</option>
+                                        <option value="bottom">Disable</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="form">
+                            <div class="form-group from-show-notify row">
+                                <div class="col-lg-3 col-md-3 col-sm-12">
+
+                                </div>
+                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                    <button id="displayNotif" class="btn btn-success">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                    <table class="table table-head-bg-success">
+                            <thead>
+                                <tr>
+                                    <th scope="col">S.No</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Sub-Category</th>
+                                    <th scope="col">Product name</th>
+                                    <th scope="col">Images</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Women</td>
+                                    <td>Lehanga</td>
+                                    <td>lehanga material</td>
+                                    <td>
+                                        <div data-toggle="modal" data-target="#modalUpdate">
+                                                <button> View images</button>
+                                           </div>
+                                    </td>
+                                    <td>active</td>
+                                    <td><button class="btn btn-success"> Edit </button></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Women</td>
+                                    <td>Lehanga</td>
+                                    <td>Saree material</td>
+                                    <td>
+                                        <div data-toggle="modal" data-target="#modalUpdate">
+                                                <button> View images</button>
+                                           </div>
+                                    </td>
+                                    <td>disabled</td>
+                                    <td><button class="btn btn-success"> Edit </button></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Women</td>
+                                    <td>Lehanga</td>
+                                    <td>Blouse Material</td>
+                                    <td>
+                                        <div data-toggle="modal" data-target="#modalUpdate">
+                                               <button> View images</button>
+                                           </div>
+                                    </td>
+                                    <td>active</td>
+                                    <td><button class="btn btn-success"> Edit </button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>	
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <h6 class="modal-title"><i class=""></i> Catalog images </h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">									
+                <a href="assets/img/Product.jpg" target="popup" onclick="window.open('assets/img/Product.jpg','name','width=600,height=400')"><img src="assets/img/Product.jpg" style="width:100px;height:130px;">
+                </a>
+                <a href="assets/img/Product.jpg" target="popup" onclick="window.open('assets/img/Product.jpg','name','width=600,height=400')"><img src="assets/img/Product.jpg" style="width:100px;height:130px;">
+                </a>
+                <a href="assets/img/Product.jpg" target="popup" onclick="window.open('assets/img/Product.jpg','name','width=600,height=400')"><img src="assets/img/Product.jpg" style="width:100px;height:130px;">
+                </a>
+                <a href="assets/img/Product.jpg" target="popup" onclick="window.open('assets/img/Product.jpg','name','width=600,height=400')"><img src="assets/img/Product.jpg" style="width:100px;height:130px;">
+                </a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
