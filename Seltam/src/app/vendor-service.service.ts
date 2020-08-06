@@ -21,7 +21,7 @@ export class VendorServiceService {
   }
 
   getpendingVendorListById(VenodrID: any) {
-    console.log(VenodrID);
+    //console.log(VenodrID);
     return this.http.get("http://localhost:3000/getPendingVendorListByID/" + VenodrID);
 
 
@@ -53,4 +53,24 @@ export class VendorServiceService {
   }
 
 
+  SendLoginDetails(data: any) {
+    console.log("login details obj", data)
+
+    return this.http.post("http://localhost:3000/SendLoginDetails", data);
+  }
+
+
+
+  addDesignTemplate(data: any) {
+
+    return this.http.post("http://localhost:3000/AddDesignPattern", data);
+  }
+
+
+  getDesignTemplateById(DesignID:any)
+  {
+    return this.http.get("http://localhost:3000/DesignTemplateById/" + DesignID);
+  }
 }
+
+

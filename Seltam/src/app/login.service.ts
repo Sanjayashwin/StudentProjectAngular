@@ -1,10 +1,11 @@
 import { Injectable, EventEmitter } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
   updateCart = new EventEmitter();
-  constructor() { }
+  constructor(public http: HttpClient) { }
 
   role: String;
 
@@ -25,4 +26,20 @@ export class LoginService {
 
     return localStorage.getItem("token");;
   }
+
+
+  dologin(data: any)
+  {
+
+    //console.log(data);
+    return this.http.post("http://localhost:3000/doLogin", data);
+
+  }
+
+
+
+
+
+
+
 }

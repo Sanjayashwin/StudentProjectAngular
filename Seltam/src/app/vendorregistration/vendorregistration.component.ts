@@ -30,7 +30,7 @@ export class VendorregistrationComponent implements OnInit {
 
 
   addVendor(form: NgForm) {
-    console.log(form.value);
+    console.log("chck add vendor",form.value);
 
     var fd = new FormData();
     console.log(form.value.FName);
@@ -42,8 +42,10 @@ export class VendorregistrationComponent implements OnInit {
     fd.append('fPlac', form.value.Fplace);
     fd.append('fpin', form.value.Fpin);
     fd.append('vImg', this.selectedMyImg, 'VendorImg');
+    fd.append('VMobile', form.value.VMobile);
+    fd.append('VEmail', form.value.VEmail);
 
-    console.log("testfd",fd)
+    // console.log("testfd",fd)
     this.venService.addVendor(fd).subscribe((data: any) => {
 
       console.log(data);

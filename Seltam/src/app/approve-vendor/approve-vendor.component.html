@@ -81,7 +81,7 @@
                                 <tr  *ngFor="let list of VendorApprovedLIst"> 
                                     <td>{{list.VendorID}}</td> 
                                     <td>{{list.FirstName}}</td>
-                                    <td data-toggle="modal"  value="1" (click)="PendingListByID(list.VendorID)">ViewDetails</td>
+                                    <td data-toggle="modal"  data-target="#modalUpdateView"  value="1" (click)="PendingListByID(list.VendorID)">ViewDetails</td>
                                     <td data-toggle="modal"  value="1" (click)="PendingListByID(list.VendorID)">View Tempalate Design</td>
                                     <td><img src="{{list.VendorPhoto}}" alt="" border=3 height=75 width=75 style="border-radius: 50%;"></td>
                                 </tr>

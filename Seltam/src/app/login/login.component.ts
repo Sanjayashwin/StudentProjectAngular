@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
+import { VendorServiceService } from '../vendor-service.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { LoginService } from '../login.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public loginService: LoginService, public router: Router) { }
+  constructor(public venService: VendorServiceService, public loginService: LoginService, public router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,20 +23,39 @@ export class LoginComponent implements OnInit {
   login(form: NgForm) {
     console.log(form.value);
 
-    var fd = new FormData();
 
-    localStorage.setItem("token", form.value.role);
+    this.loginService.dologin(form.value).subscribe((data: any) => {
 
-    this.loginService.setServiceData(form.value)
-    this.loginService.updateCart.emit();
+      this.loginService.updateCart.emit();
 
-    if (form.value.role == 'Admin') {
-      this.router.navigate(['/ADMIN']);
-    } else {
-      this.router.navigate(['/VENDOR']);
-    }
+      localStorage.setItem("token", data[0].role);
+      localStorage.setItem("vid", data[0].VendorID);
+
+      console.log("login data",data[0].role);
+      
+     // this.msg = data;
+      if( data[0].role='Admin')
+      {
+      this.router.navigate(['ADMIN']);
+      }else
+      {
+        this.router.navigate(['VENDOR']);
+      }
+    }, (error: any) => {
+
+      console.log(error);
+    })
 
   }
 
 
+
+
+
+
+
+
 }
+
+
+

@@ -7,106 +7,93 @@
                 <div class="card-category">Add new design patterns</div>
             </div>
             <div class="card-body">
-                <div class="form-group from-show-notify row">
-                    <div class="col-lg-3 col-md-3 col-sm-12 text-left">
-                        <label>Choose Category :</label>
-                    </div>
-                    <div class="col-lg-4 col-md-9 col-sm-12">
-                        <select class="form-control input-fixed" id="notify_placement_from">
-                            <option>Men</option>
-                            <option>Women</option>
-                            <option>Kids</option>
-                            <option>Babies</option>
-                            <option>Uniform</option>
-                        </select>
+                <form (ngSubmit)="addDesignTemp(f)" #f="ngForm">
+                    <div class="form-group from-show-notify row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 text-left">
+                            <label>Choose Category :</label>
+                        </div>
+                        <div class="col-lg-4 col-md-9 col-sm-12">
+                            <select class="form-control input-fixed" id="notify_placement_from"
+                                (change)="getsubcatById($event.target.value)" name="catName" ngModel #uname>
+                                <option></option>
+                                <option *ngFor="let cat of myCatagory" value="{{cat.CategoryID}}">{{cat.CategoryNames}}
+                                </option>
+                            </select>
 
-                    </div>
-                </div>
-
-                <div class="form-group from-show-notify row">
-                    <div class="col-lg-3 col-md-3 col-sm-12 text-left">
-                        <label>Choose sub-category :</label>
-                    </div>
-                    <div class="col-lg-4 col-md-9 col-sm-12">
-                        <select class="form-control input-fixed" id="notify_state">
-                            <option>Shirt</option>
-                            <option>Pant</option>
-                            <option>Blazer</option>
-                            <option>T-shirt</option>
-                            <option>Tracks</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group from-show-notify row">
-                    <div class="col-lg-3 col-md-3 col-sm-12 text-left">
-                        <label>Design pattern Name :</label>
-                    </div>
-                    <div class="col-lg-4 col-md-9 col-sm-12">
-                        <input type="text" class="form-control" placeholder="">
-                    </div>
-                </div>
-
-                <div class="form-group from-show-notify row">
-                    <div class="col-lg-3 col-md-3 col-sm-12 text-left">
-                        <label>Total Cost :</label>
-                    </div>
-                    <div class="col-lg-4 col-md-9 col-sm-12">
-                        <input type="text" class="form-control" placeholder="">
-                    </div>
-                </div>
-
-                <div class="form-group from-show-notify row">
-                    <div class="col-lg-3 col-md-3 col-sm-12 text-left">
-                        <label>standard Delivey Date :</label>
-                    </div>
-                    <div class="col-lg-4 col-md-9 col-sm-12">
-                        <input type="number" class="form-control" placeholder="">
-                    </div><label>To</label>
-                    <div class="col-lg-4 col-md-9 col-sm-12">
-                        <input type="number" class="form-control" placeholder="">
-                    </div><label>days</label>
-                </div>
-
-                <div class="form-group from-show-notify row">
-                    <div class="col-lg-3 col-md-3 col-sm-12 text-left">
-                        <label>Image upload :</label>
-                    </div>
-                    <div class="col-lg-4 col-md-9 col-sm-12">
-                        <input type="file" class="form-control-file" id="imageupload">
-                    </div>
-                </div>
-
-                <div class="form-group from-show-notify row">
-                    <div class="col-lg-3 col-md-3 col-sm-12 text-left">
-                        <label>Status :</label>
-                    </div>
-                    <div class="col-lg-4 col-md-9 col-sm-12">
-                        <select class="form-control input-fixed" id="notify_placement_from">
-                            <option value="top">Active</option>
-                            <option value="bottom">Disable</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="card-footer">
-                    <div class="form">
-                        <div class="form-group from-show-notify row">
-                            <div class="col-lg-3 col-md-3 col-sm-12">
-
-                            </div>
-                            <div class="col-lg-4 col-md-9 col-sm-12">
-                                <a routerLink="/chooseMesurement"><button id="displayNotif" class="btn btn-success">Next</button></a>
-                            </div>
                         </div>
                     </div>
 
+                    <div class="form-group from-show-notify row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 text-left">
+                            <label>Choose sub-category :</label>
+                        </div>
+                        <div class="col-lg-4 col-md-9 col-sm-12">
+                            <select class="form-control input-fixed" id="notify_state" name="SubcatName" ngModel>
+                                <option *ngFor="let cat of mySubCatagory" value="{{cat.SubCategoryID}}">
+                                    {{cat.SubCategoryName}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group from-show-notify row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 text-left">
+                            <label>Design pattern Name :</label>
+                        </div>
+                        <div class="col-lg-4 col-md-9 col-sm-12">
+                            <input type="text" class="form-control" placeholder="" name="DesignPatName" ngModel #design>
+                        </div>
+                    </div>
+
+                    <div class="form-group from-show-notify row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 text-left">
+                            <label>Total Cost :</label>
+                        </div>
+                        <div class="col-lg-4 col-md-9 col-sm-12">
+                            <input type="text" class="form-control" placeholder="" name="DesignCost" ngModel
+                                #designCost>
+                        </div>
+                    </div>
+
+                    <div class="form-group from-show-notify row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 text-left">
+                            <label>standard Delivey Date :</label>
+                        </div>
+                        <div class="col-lg-4 col-md-9 col-sm-12">
+                            <input type="number" class="form-control" placeholder="" name="DeliveryDate" ngModel
+                                #DeliveryDate>
+                        </div>
+                    </div>
+
+                    <div class="form-group from-show-notify row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 text-left">
+                            <label>Image upload :</label>
+                        </div>
+                        <div class="col-lg-4 col-md-9 col-sm-12">
+                            <input type="file" class="form-control-file" id="imageupload" multiple
+                                (change)="selectedImage($event)" name="DImg" ngModel>
+                        </div>
+                    </div>
+
+                    <div class="form-group from-show-notify row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 text-left">
+                            <label>Status :</label>
+                        </div>
+                        <div class="col-lg-4 col-md-9 col-sm-12">
+                            <select class="form-control input-fixed" id="notify_placement_from" Name="DesignStatus"
+                                ngModel #DesignStatus>
+                                <option value="top">Active</option>
+                                <option value="bottom">Disable</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-9 col-sm-12">
+                        <button id="displayNotif" type="submit" class="btn btn-success">Next</button>
+                    </div>
 
 
-
-                </div>
+                </form>
             </div>
         </div>
 
-    </div>    
+    </div>
 </div>

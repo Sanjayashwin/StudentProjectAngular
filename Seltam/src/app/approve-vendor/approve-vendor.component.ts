@@ -13,12 +13,13 @@ export class ApproveVendorComponent implements OnInit {
   optionsRadios = "";
   constructor(public venService: VendorServiceService, public loginService: LoginService, public router: Router) { }
   VendorPendingLIst = [];
-  VendorApprovedLIst = []
-  vname = ""
-  vplace = ""
-  vpin = ""
-  Approvevid = ""
-  Rejectid = ""
+  VendorApprovedLIst = [];
+  vname = "";
+  vplace = "";
+  vpin = "";
+  Approvevid = "";
+  Rejectid = "";
+
   ngOnInit(): void {
     this.getPendingVendorList();
     this.geApprovedVendorList()
@@ -29,9 +30,11 @@ export class ApproveVendorComponent implements OnInit {
     this.optionsRadios = value
   }
   PendingListByID(value) {
+
     this.venService.getpendingVendorListById(value).subscribe((data: any[]) => {
 
       console.log("my data", data);
+
       this.vname = data[0].FirstName;
       this.vplace = data[0].FirstName;
       this.vpin = data[0].Pincode;
@@ -69,6 +72,8 @@ export class ApproveVendorComponent implements OnInit {
 
       console.log("my data", data);
       $("#modalUpdateApprove").modal("hide");
+
+      this.sendLoginDetails(ngform);
 
       this.getPendingVendorList();
       this.geApprovedVendorList();
@@ -160,6 +165,49 @@ export class ApproveVendorComponent implements OnInit {
   }
 
 
+
+  sendLoginDetails(ngform: NgForm) {
+    let val: any;
+    console.log("sendlogin", ngform.value.Approvevid)
+    this.venService.getpendingVendorListById(ngform.value.Approvevid).subscribe((data: any[]) => {
+
+      console.log("my login", data[0])
+     this. insertlogindetails(data[0]);
+
+    }, (error) => {
+
+      console.log("my error", error);
+
+    }, () => {
+
+      console.log("completed");
+
+    });
+
+
+  }
+
+
+  insertlogindetails(obj)
+  
+  {
+    this.venService.SendLoginDetails(obj).subscribe((data: any[]) => {
+
+    
+
+    }, (error) => {
+
+      console.log("my error", error);
+
+    }, () => {
+
+      console.log("completed");
+
+    });
+
+
+
+  }
 
 
 }
